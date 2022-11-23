@@ -41,9 +41,25 @@ class UserController {
         new UserDto(
           user.getId(),
           user.getUsername(),
-          user.getRole(),
-          user.getResponses(),
-          user.getOffers()
+          entityConverter.RoleToDto(user.getRole()),
+          offerRepository
+            .findAll()
+            .stream()
+            .filter(offer -> offer.getUser().getId() == user.getId())
+            .map(offer ->
+              new OfferDto(
+                entityConverter.OfferToDto(offer).getId(),
+                entityConverter.OfferToDto(offer).getName(),
+                entityConverter.OfferToDto(offer).getSalaryLowest(),
+                entityConverter.OfferToDto(offer).getSalaryHighest(),
+                entityConverter.OfferToDto(offer).getLocation(),
+                entityConverter.OfferToDto(offer).getCategory(),
+                entityConverter.OfferToDto(offer).getUser(),
+                entityConverter.ResponsesToDto(offer.getResponses())
+              )
+            )
+            .collect(Collectors.toList()),
+          entityConverter.ResponsesToDto(user.getResponses())
         )
       )
       .collect(Collectors.toList());

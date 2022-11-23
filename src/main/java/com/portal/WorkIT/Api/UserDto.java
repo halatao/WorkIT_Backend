@@ -4,21 +4,30 @@ import com.portal.WorkIT.Entity.Offer;
 import com.portal.WorkIT.Entity.Response;
 import com.portal.WorkIT.Entity.Role;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDto {
     private long id;
     private String username;
-    private Role role;
-    private List<Response> responses;
-    private List<Offer> offers;
+    private RoleDto role;
+    private List<OfferDto> offers;
+    private List<ResponseDto> responses;
 
-    public UserDto(long id, String username, Role role, List<Response> responses, List<Offer> offers) {
+    public UserDto(long id, String username, RoleDto role) {
         this.id = id;
         this.username = username;
         this.role = role;
-        this.responses = responses;
+        this.offers = new ArrayList<>();
+        this.responses = new ArrayList<>();
+    }
+
+    public UserDto(long id, String username, RoleDto role, List<OfferDto> offers, List<ResponseDto> responses) {
+        this.id = id;
+        this.username = username;
+        this.role = role;
         this.offers = offers;
+        this.responses = responses;
     }
 
     UserDto(){}
@@ -39,27 +48,27 @@ public class UserDto {
         this.username = username;
     }
 
-    public Role getRole() {
+    public RoleDto getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(RoleDto role) {
         this.role = role;
     }
 
-    public List<Response> getResponses() {
-        return responses;
-    }
-
-    public void setResponses(List<Response> responses) {
-        this.responses = responses;
-    }
-
-    public List<Offer> getOffers() {
+    public List<OfferDto> getOffers() {
         return offers;
     }
 
-    public void setOffers(List<Offer> offers) {
+    public void setOffers(List<OfferDto> offers) {
         this.offers = offers;
+    }
+
+    public List<ResponseDto> getResponses() {
+        return responses;
+    }
+
+    public void setResponses(List<ResponseDto> responses) {
+        this.responses = responses;
     }
 }

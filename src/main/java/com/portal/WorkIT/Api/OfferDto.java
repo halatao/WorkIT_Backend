@@ -12,12 +12,12 @@ public class OfferDto {
     private String name;
     private int salaryLowest;
     private int salaryHighest;
-    private Location location;
-    private Category category;
-    private User user;
-    private List<Response> responses;
+    private LocationDto location;
+    private CategoryDto category;
+    private UserDto user;
+    private List<ResponseDto> responses;
 
-    public OfferDto(long id, String name, int salaryLowest, int salaryHighest, Location location, Category category, User user, List<Response> responses) {
+    public OfferDto(long id, String name, int salaryLowest, int salaryHighest, LocationDto location, CategoryDto category, UserDto user, List<ResponseDto> responses) {
         this.id = id;
         this.name = name;
         this.salaryLowest = salaryLowest;
@@ -28,7 +28,16 @@ public class OfferDto {
         this.responses = responses;
     }
 
-    public OfferDto(){}
+    public OfferDto(OfferDto offerToDto) {
+        this.id = offerToDto.getId();
+        this.name = offerToDto.getName();
+        this.salaryLowest = offerToDto.getSalaryLowest();
+        this.salaryHighest = offerToDto.getSalaryHighest();
+        this.location = offerToDto.getLocation();
+        this.category = offerToDto.getCategory();
+        this.user = offerToDto.getUser();
+        this.responses = offerToDto.getResponses();
+    }
 
     public long getId() {
         return id;
@@ -62,35 +71,35 @@ public class OfferDto {
         this.salaryHighest = salaryHighest;
     }
 
-    public Location getLocation() {
+    public LocationDto getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(LocationDto location) {
         this.location = location;
     }
 
-    public Category getCategory() {
+    public CategoryDto getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(CategoryDto category) {
         this.category = category;
     }
 
-    public User getUser() {
+    public UserDto getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(UserDto user) {
         this.user = user;
     }
 
-    public List<Response> getResponses() {
+    public List<ResponseDto> getResponses() {
         return responses;
     }
 
-    public void setResponses(List<Response> responses) {
+    public void setResponses(List<ResponseDto> responses) {
         this.responses = responses;
     }
 }
