@@ -14,10 +14,10 @@ public class OfferDto {
     private int salaryHighest;
     private LocationDto location;
     private CategoryDto category;
-    private UserDto user;
+    private SimpleUserDto user;
     private List<ResponseDto> responses;
 
-    public OfferDto(long id, String name, int salaryLowest, int salaryHighest, LocationDto location, CategoryDto category, UserDto user, List<ResponseDto> responses) {
+    public OfferDto(long id, String name, int salaryLowest, int salaryHighest, LocationDto location, CategoryDto category, SimpleUserDto user, List<ResponseDto> responses) {
         this.id = id;
         this.name = name;
         this.salaryLowest = salaryLowest;
@@ -28,16 +28,7 @@ public class OfferDto {
         this.responses = responses;
     }
 
-    public OfferDto(OfferDto offerToDto) {
-        this.id = offerToDto.getId();
-        this.name = offerToDto.getName();
-        this.salaryLowest = offerToDto.getSalaryLowest();
-        this.salaryHighest = offerToDto.getSalaryHighest();
-        this.location = offerToDto.getLocation();
-        this.category = offerToDto.getCategory();
-        this.user = offerToDto.getUser();
-        this.responses = offerToDto.getResponses();
-    }
+    public OfferDto(){}
 
     public long getId() {
         return id;
@@ -87,11 +78,11 @@ public class OfferDto {
         this.category = category;
     }
 
-    public UserDto getUser() {
+    public SimpleUserDto getUser() {
         return user;
     }
 
-    public void setUser(UserDto user) {
+    public void setUser(SimpleUserDto user) {
         this.user = user;
     }
 
