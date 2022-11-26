@@ -11,7 +11,7 @@ public class UserDto {
     private long id;
     private String username;
     private RoleDto role;
-    private List<OfferDto> offers;
+    private List<SimpleOfferDto> offers;
     private List<ResponseDto> responses;
 
     public UserDto(long id, String username, RoleDto role) {
@@ -22,7 +22,7 @@ public class UserDto {
         this.responses = new ArrayList<>();
     }
 
-    public UserDto(long id, String username, RoleDto role, List<OfferDto> offers, List<ResponseDto> responses) {
+    public UserDto(long id, String username, RoleDto role, List<SimpleOfferDto> offers, List<ResponseDto> responses) {
         this.id = id;
         this.username = username;
         this.role = role;
@@ -56,11 +56,11 @@ public class UserDto {
         this.role = role;
     }
 
-    public List<OfferDto> getOffers() {
+    public List<SimpleOfferDto> getOffers() {
         return offers;
     }
 
-    public void setOffers(List<OfferDto> offers) {
+    public void setOffers(List<SimpleOfferDto> offers) {
         this.offers = offers;
     }
 
