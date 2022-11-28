@@ -4,93 +4,102 @@ import com.portal.WorkIT.Entity.Category;
 import com.portal.WorkIT.Entity.Location;
 import com.portal.WorkIT.Entity.Response;
 import com.portal.WorkIT.Entity.User;
-
 import java.util.List;
 
 public class OfferDto {
-    private long id;
-    private String name;
-    private int salaryLowest;
-    private int salaryHighest;
-    private LocationDto location;
-    private CategoryDto category;
-    private SimpleUserDto user;
-    private List<ResponseDto> responses;
 
-    public OfferDto(long id, String name, int salaryLowest, int salaryHighest, LocationDto location, CategoryDto category, SimpleUserDto user, List<ResponseDto> responses) {
-        this.id = id;
-        this.name = name;
-        this.salaryLowest = salaryLowest;
-        this.salaryHighest = salaryHighest;
-        this.location = location;
-        this.category = category;
-        this.user = user;
-        this.responses = responses;
-    }
+  private long id;
+  private String name;
+  private int salaryLowest;
+  private int salaryHighest;
+  private LocationDto location;
+  private CategoryDto category;
+  private SimpleUserDto user;
+  private List<ResponseDto> responses;
 
-    public OfferDto(){}
+  public OfferDto(
+    long id,
+    String name,
+    int salaryLowest,
+    int salaryHighest,
+    LocationDto location,
+    CategoryDto category,
+    SimpleUserDto user,
+    List<ResponseDto> responses
+  ) {
+    this.id = id;
+    this.name = name;
+    this.salaryLowest = salaryLowest;
+    this.salaryHighest = salaryHighest;
+    this.location = location;
+    this.category = category;
+    this.user = user;
+    this.responses = responses;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public OfferDto() {}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public int getSalaryLowest() {
-        return salaryLowest;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setSalaryLowest(int salaryLowest) {
-        this.salaryLowest = salaryLowest;
-    }
+  public int getSalaryLowest() {
+    return salaryLowest;
+  }
 
-    public int getSalaryHighest() {
-        return salaryHighest;
-    }
+  public void setSalaryLowest(int salaryLowest) {
+    this.salaryLowest = salaryLowest;
+  }
 
-    public void setSalaryHighest(int salaryHighest) {
-        this.salaryHighest = salaryHighest;
-    }
+  public int getSalaryHighest() {
+    return salaryHighest;
+  }
 
-    public LocationDto getLocation() {
-        return location;
-    }
+  public void setSalaryHighest(int salaryHighest) {
+    this.salaryHighest = salaryHighest;
+  }
 
-    public void setLocation(LocationDto location) {
-        this.location = location;
-    }
+  public LocationDto getLocation() {
+    return location;
+  }
 
-    public CategoryDto getCategory() {
-        return category;
-    }
+  public void setLocation(LocationDto location) {
+    this.location = location;
+  }
 
-    public void setCategory(CategoryDto category) {
-        this.category = category;
-    }
+  public CategoryDto getCategory() {
+    return category;
+  }
 
-    public SimpleUserDto getUser() {
-        return user;
-    }
+  public void setCategory(CategoryDto category) {
+    this.category = category;
+  }
 
-    public void setUser(SimpleUserDto user) {
-        this.user = user;
-    }
+  public SimpleUserDto getUser() {
+    return user;
+  }
 
-    public List<ResponseDto> getResponses() {
-        return responses;
-    }
+  public void setUser(SimpleUserDto user) {
+    this.user = user;
+  }
 
-    public void setResponses(List<ResponseDto> responses) {
-        this.responses = responses;
-    }
+  public List<ResponseDto> getResponses() {
+    return responses;
+  }
+
+  public void setResponses(List<ResponseDto> responses) {
+    this.responses = responses;
+  }
 }

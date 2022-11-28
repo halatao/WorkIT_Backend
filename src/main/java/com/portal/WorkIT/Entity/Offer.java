@@ -1,110 +1,119 @@
 package com.portal.WorkIT.Entity;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "offer")
 public class Offer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",nullable = false)
-    private long id;
 
-    @Column(name = "name",nullable = false)
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
+  private long id;
 
-    @Column(name = "salaryLowest")
-    private int salaryLowest;
+  @Column(name = "name", nullable = false)
+  private String name;
 
-    @Column(name = "salaryHighest")
-    private int salaryHighest;
+  @Column(name = "salaryLowest")
+  private int salaryLowest;
 
-    @ManyToOne
-    @JoinColumn(name = "location_id",nullable = false)
-    private Location location;
+  @Column(name = "salaryHighest")
+  private int salaryHighest;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id",nullable = false)
-    private Category category;
+  @ManyToOne
+  @JoinColumn(name = "location_id", nullable = false)
+  private Location location;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id",nullable = false)
-    private User user;
+  @ManyToOne
+  @JoinColumn(name = "category_id", nullable = false)
+  private Category category;
 
-    @OneToMany
-    @JoinColumn(name = "response")
-    private List<Response> responses;
+  @ManyToOne
+  @JoinColumn(name = "user_id", nullable = false)
+  private User user;
 
-    public Offer(String name, int salaryLowest, int salaryHighest, Location location, Category category, User user) {
-        this.name = name;
-        this.salaryLowest = salaryLowest;
-        this.salaryHighest = salaryHighest;
-        this.location = location;
-        this.category = category;
-        this.user = user;
-    }
+  @OneToMany
+  @JoinColumn(name = "response")
+  private List<Response> responses;
 
-    public Offer(){}
+  public Offer(
+    String name,
+    int salaryLowest,
+    int salaryHighest,
+    Location location,
+    Category category,
+    User user
+  ) {
+    this.name = name;
+    this.salaryLowest = salaryLowest;
+    this.salaryHighest = salaryHighest;
+    this.location = location;
+    this.category = category;
+    this.user = user;
+    this.responses = new ArrayList<>();
+  }
 
-    public long getId() {
-        return id;
-    }
+  public Offer() {}
 
-    public String getName() {
-        return name;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public int getSalaryLowest() {
-        return salaryLowest;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setSalaryLowest(int salaryLowest) {
-        this.salaryLowest = salaryLowest;
-    }
+  public int getSalaryLowest() {
+    return salaryLowest;
+  }
 
-    public int getSalaryHighest() {
-        return salaryHighest;
-    }
+  public void setSalaryLowest(int salaryLowest) {
+    this.salaryLowest = salaryLowest;
+  }
 
-    public void setSalaryHighest(int salaryHighest) {
-        this.salaryHighest = salaryHighest;
-    }
+  public int getSalaryHighest() {
+    return salaryHighest;
+  }
 
-    public Location getLocation() {
-        return location;
-    }
+  public void setSalaryHighest(int salaryHighest) {
+    this.salaryHighest = salaryHighest;
+  }
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+  public Location getLocation() {
+    return location;
+  }
 
-    public Category getCategory() {
-        return category;
-    }
+  public void setLocation(Location location) {
+    this.location = location;
+  }
 
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+  public Category getCategory() {
+    return category;
+  }
 
-    public User getUser() {
-        return user;
-    }
+  public void setCategory(Category category) {
+    this.category = category;
+  }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+  public User getUser() {
+    return user;
+  }
 
-    public List<Response> getResponses() {
-        return responses;
-    }
+  public void setUser(User user) {
+    this.user = user;
+  }
 
-    public void setResponses(List<Response> responses) {
-        this.responses = responses;
-    }
+  public List<Response> getResponses() {
+    return responses;
+  }
+
+  public void setResponses(List<Response> responses) {
+    this.responses = responses;
+  }
 }

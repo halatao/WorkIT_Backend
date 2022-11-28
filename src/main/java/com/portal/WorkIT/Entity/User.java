@@ -1,83 +1,84 @@
 package com.portal.WorkIT.Entity;
 
-import javax.persistence.*;
 import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",nullable = false)
-    private long id;
 
-    @Column(name = "username",nullable = false)
-    private String username;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
+  private long id;
 
-    @Column(name = "password",nullable = false)
-    private String password;
+  @Column(name = "username", nullable = false)
+  private String username;
 
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;
+  @Column(name = "password", nullable = false)
+  private String password;
 
-    @OneToMany
-    @JoinColumn(name = "response")
-    private List<Response> responses;
+  @ManyToOne
+  @JoinColumn(name = "role_id")
+  private Role role;
 
-    @OneToMany
-    @JoinColumn(name = "offer")
-    private List<Offer> offers;
+  @OneToMany
+  @JoinColumn(name = "response")
+  private List<Response> responses;
 
-    public User(String username, String password, Role role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
+  @OneToMany
+  @JoinColumn(name = "offer")
+  private List<Offer> offers;
 
-    public User(){}
+  public User(String username, String password, Role role) {
+    this.username = username;
+    this.password = password;
+    this.role = role;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public User() {}
 
-    public String getUsername() {
-        return username;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public String getPassword() {
+    return password;
+  }
 
-    public Role getRole() {
-        return role;
-    }
+  public void setPassword(String password) {
+    this.password = password;
+  }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
+  public Role getRole() {
+    return role;
+  }
 
-    public List<Response> getResponses() {
-        return responses;
-    }
+  public void setRole(Role role) {
+    this.role = role;
+  }
 
-    public void setResponses(List<Response> responses) {
-        this.responses = responses;
-    }
+  public List<Response> getResponses() {
+    return responses;
+  }
 
-    public List<Offer> getOffers() {
-        return offers;
-    }
+  public void setResponses(List<Response> responses) {
+    this.responses = responses;
+  }
 
-    public void setOffers(List<Offer> offers) {
-        this.offers = offers;
-    }
+  public List<Offer> getOffers() {
+    return offers;
+  }
+
+  public void setOffers(List<Offer> offers) {
+    this.offers = offers;
+  }
 }

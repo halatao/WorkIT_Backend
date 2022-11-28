@@ -1,44 +1,47 @@
 package com.portal.WorkIT.Entity;
 
-import javax.persistence.*;
 import java.util.List;
+import javax.persistence.*;
+
 @Entity
 @Table(name = "category")
 public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",nullable = false)
-    private long id;
 
-    @Column(name = "name",nullable = false)
-    private String name;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
+  private long id;
 
-    @OneToMany
-    @JoinColumn(name = "offer")
-    private List<Offer> offers;
+  @Column(name = "name", nullable = false)
+  private String name;
 
-    public Category(String name) {
-        this.name = name;
-    }
-    public Category(){}
+  @OneToMany
+  @JoinColumn(name = "offer")
+  private List<Offer> offers;
 
-    public long getId() {
-        return id;
-    }
+  public Category(String name) {
+    this.name = name;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public Category() {}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public List<Offer> getOffers() {
-        return offers;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setOffers(List<Offer> offers) {
-        this.offers = offers;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public List<Offer> getOffers() {
+    return offers;
+  }
+
+  public void setOffers(List<Offer> offers) {
+    this.offers = offers;
+  }
 }

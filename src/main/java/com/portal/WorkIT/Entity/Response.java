@@ -1,74 +1,74 @@
 package com.portal.WorkIT.Entity;
 
-import org.hibernate.annotations.Type;
-
-import javax.persistence.*;
 import java.util.UUID;
+import javax.persistence.*;
+import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "response")
 public class Response {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",nullable = false)
-    private long id;
 
-    @Column(name = "reply",nullable = false)
-    private String reply;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "id", nullable = false)
+  private long id;
 
-    @Column(name = "cv")
-    private String cv;
+  @Column(name = "reply", nullable = false)
+  private String reply;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+  @Column(name = "cv")
+  private String cv;
 
-    @ManyToOne
-    @JoinColumn(name = "offer_id")
-    private Offer offer;
+  @ManyToOne
+  @JoinColumn(name = "user_id")
+  private User user;
 
-    public Response(String reply, String cv,User user, Offer offer) {
-        this.reply = reply;
-        this.cv = cv;
-        this.user = user;
-        this.offer = offer;
-    }
+  @ManyToOne
+  @JoinColumn(name = "offer_id")
+  private Offer offer;
 
-    public Response(){}
+  public Response(String reply, String cv, User user, Offer offer) {
+    this.reply = reply;
+    this.cv = cv;
+    this.user = user;
+    this.offer = offer;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public Response() {}
 
-    public String getReply() {
-        return reply;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public void setReply(String reply) {
-        this.reply = reply;
-    }
+  public String getReply() {
+    return reply;
+  }
 
-    public String getCv() {
-        return cv;
-    }
+  public void setReply(String reply) {
+    this.reply = reply;
+  }
 
-    public void setCv(String cv) {
-        this.cv = cv;
-    }
+  public String getCv() {
+    return cv;
+  }
 
-    public User getUser() {
-        return user;
-    }
+  public void setCv(String cv) {
+    this.cv = cv;
+  }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+  public User getUser() {
+    return user;
+  }
 
-    public Offer getOffer() {
-        return offer;
-    }
+  public void setUser(User user) {
+    this.user = user;
+  }
 
-    public void setOffer(Offer offer) {
-        this.offer = offer;
-    }
+  public Offer getOffer() {
+    return offer;
+  }
+
+  public void setOffer(Offer offer) {
+    this.offer = offer;
+  }
 }

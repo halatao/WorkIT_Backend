@@ -3,72 +3,78 @@ package com.portal.WorkIT.Api;
 import com.portal.WorkIT.Entity.Offer;
 import com.portal.WorkIT.Entity.Response;
 import com.portal.WorkIT.Entity.Role;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserDto {
-    private long id;
-    private String username;
-    private RoleDto role;
-    private List<SimpleOfferDto> offers;
-    private List<ResponseDto> responses;
 
-    public UserDto(long id, String username, RoleDto role) {
-        this.id = id;
-        this.username = username;
-        this.role = role;
-        this.offers = new ArrayList<>();
-        this.responses = new ArrayList<>();
-    }
+  private long id;
+  private String username;
+  private RoleDto role;
+  private List<SimpleOfferDto> offers;
+  private List<ResponseDto> responses;
 
-    public UserDto(long id, String username, RoleDto role, List<SimpleOfferDto> offers, List<ResponseDto> responses) {
-        this.id = id;
-        this.username = username;
-        this.role = role;
-        this.offers = offers;
-        this.responses = responses;
-    }
+  public UserDto(long id, String username, RoleDto role) {
+    this.id = id;
+    this.username = username;
+    this.role = role;
+    this.offers = new ArrayList<>();
+    this.responses = new ArrayList<>();
+  }
 
-    UserDto(){}
+  public UserDto(
+    long id,
+    String username,
+    RoleDto role,
+    List<SimpleOfferDto> offers,
+    List<ResponseDto> responses
+  ) {
+    this.id = id;
+    this.username = username;
+    this.role = role;
+    this.offers = offers;
+    this.responses = responses;
+  }
 
-    public long getId() {
-        return id;
-    }
+  UserDto() {}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public RoleDto getRole() {
-        return role;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setRole(RoleDto role) {
-        this.role = role;
-    }
+  public RoleDto getRole() {
+    return role;
+  }
 
-    public List<SimpleOfferDto> getOffers() {
-        return offers;
-    }
+  public void setRole(RoleDto role) {
+    this.role = role;
+  }
 
-    public void setOffers(List<SimpleOfferDto> offers) {
-        this.offers = offers;
-    }
+  public List<SimpleOfferDto> getOffers() {
+    return offers;
+  }
 
-    public List<ResponseDto> getResponses() {
-        return responses;
-    }
+  public void setOffers(List<SimpleOfferDto> offers) {
+    this.offers = offers;
+  }
 
-    public void setResponses(List<ResponseDto> responses) {
-        this.responses = responses;
-    }
+  public List<ResponseDto> getResponses() {
+    return responses;
+  }
+
+  public void setResponses(List<ResponseDto> responses) {
+    this.responses = responses;
+  }
 }

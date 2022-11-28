@@ -1,39 +1,40 @@
 package com.portal.WorkIT.Api;
 
 public class SimpleUserDto {
-    private long id;
-    private String username;
-    private RoleDto role;
 
-    public SimpleUserDto(long id, String username, RoleDto role) {
-        this.id = id;
-        this.username = username;
-        this.role = role;
-    }
+  private long id;
+  private String username;
+  private RoleDto role;
 
-    public SimpleUserDto(){}
+  public SimpleUserDto(long id, String username, RoleDto role) {
+    this.id = id;
+    this.username = username;
+    this.role = role;
+  }
 
-    public long getId() {
-        return id;
-    }
+  public SimpleUserDto() {}
 
-    public void setId(long id) {
-        this.id = id;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public String getUsername() {
-        return username;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public RoleDto getRole() {
-        return role;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setRole(RoleDto role) {
-        this.role = role;
-    }
+  public RoleDto getRole() {
+    return role;
+  }
+
+  public void setRole(RoleDto role) {
+    this.role = role;
+  }
 }
